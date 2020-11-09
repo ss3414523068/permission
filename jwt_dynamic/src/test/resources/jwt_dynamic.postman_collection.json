@@ -1,0 +1,983 @@
+{
+  "info": {
+    "_postman_id": "",
+    "name": "jwt_dynamic",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "登录",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:80/login/doLogin",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "login",
+            "doLogin"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "user1"
+            },
+            {
+              "key": "password",
+              "value": "123456"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "后台首页",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/back/home",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "back",
+            "home"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "用户列表",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/user/list",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "user",
+            "list"
+          ],
+          "query": [
+            {
+              "key": "currentPage",
+              "value": "1"
+            },
+            {
+              "key": "pageSize",
+              "value": "10"
+            },
+            {
+              "key": "userName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "创建用户",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/user/create",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "user",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "userName",
+              "value": "user4"
+            },
+            {
+              "key": "userPassword",
+              "value": "123456"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "获取用户",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/user/get",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "user",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "更新用户",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/user/update",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "user",
+            "update"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "4"
+            },
+            {
+              "key": "userPassword",
+              "value": "654321"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "删除用户",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/user/delete",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "user",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "角色列表",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/role/list",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "role",
+            "list"
+          ],
+          "query": [
+            {
+              "key": "currentPage",
+              "value": "1"
+            },
+            {
+              "key": "pageSize",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "创建角色",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/role/create",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "role",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "roleName",
+              "value": "role4"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "获取角色",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/role/get",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "role",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "更新角色",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/role/update",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "role",
+            "update"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "3"
+            },
+            {
+              "key": "roleName",
+              "value": "role5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "删除角色",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/role/delete",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "role",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "权限列表",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/perm/list",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "perm",
+            "list"
+          ],
+          "query": [
+            {
+              "key": "currentPage",
+              "value": "1"
+            },
+            {
+              "key": "pageSize",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "创建权限",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/perm/create",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "perm",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "parentId",
+              "value": "0"
+            },
+            {
+              "key": "permissionName",
+              "value": "permission1"
+            },
+            {
+              "key": "permissionUrl",
+              "value": "/perm/permission1"
+            },
+            {
+              "key": "permissionPerm",
+              "value": "permission:permission1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "获取权限",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/perm/get",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "perm",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "更新权限",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/perm/update",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "perm",
+            "update"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            },
+            {
+              "key": "permissionName",
+              "value": "permission2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "删除权限",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/perm/delete",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "perm",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "创建用户角色关联",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/userRole/create",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "userRole",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "1"
+            },
+            {
+              "key": "roleId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "删除用户角色关联",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/userRole/delete",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "userRole",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "创建角色权限关联",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/rolePerm/create",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "rolePerm",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "roleId",
+              "value": "1"
+            },
+            {
+              "key": "permissionId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "删除角色权限关联",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/rolePerm/delete",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "rolePerm",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "roleId",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "路由列表",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/route/list",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "route",
+            "list"
+          ],
+          "query": [
+            {
+              "key": "currentPage",
+              "value": "1"
+            },
+            {
+              "key": "pageSize",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "创建路由",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/route/create",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "route",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "routeSort",
+              "value": "0"
+            },
+            {
+              "key": "routeName",
+              "value": "route1"
+            },
+            {
+              "key": "routeUrl",
+              "value": "/perm/permission1"
+            },
+            {
+              "key": "routePerm",
+              "value": "permission:permission1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "获取路由",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/route/get",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "route",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "更新路由",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/route/update",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "route",
+            "update"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            },
+            {
+              "key": "routeName",
+              "value": "route2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "删除路由",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "type": "text",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:80/route/delete",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "80",
+          "path": [
+            "route",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.PermissionMapper">
+
+    <resultMap id="BaseResultMap" type="com.model.Permission">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="permission_name" property="permissionName" jdbcType="VARCHAR"/>
+        <result column="permission_url" property="permissionUrl" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, permission_name, permission_url
+    </sql>
+
+    <!--
+    三表关联，输入User，输出其拥有的权限
+    GROUP BY确保最终获取的值不重复
+    -->
+    <select id="selectPermissionList" resultMap="BaseResultMap" parameterType="com.model.User">
+        SELECT permission.
+        <include refid="Base_Column_List"/>
+        FROM shiro_user user, shiro_user_role userRole, shiro_role role, shiro_role_permission rolePermission, shiro_permission permission
+        WHERE user.id = userRole.user_id
+        AND userRole.role_id = role.id
+        AND role.id = rolePermission.role_id
+        AND rolePermission.permission_id = permission.id
+        AND user.user_name = #{userName}
+        GROUP BY permission.id
+    </select>
+
+</mapper>
